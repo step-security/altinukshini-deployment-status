@@ -1,0 +1,27 @@
+name: "Validate"
+on: [push]
+
+jobs:
+  deploy:
+    name: Create test deployment
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: step-security/deployment-action@v2
+        name: Create GitHub deployment
+        id: deployment
+        with:
+          token: "${{ github.token }}"
+          target_url: http://my-app-url.com
+          environment: production
+
+      - name: Update deployment status
+        uses: ./
+        with:
+          token: "${{ github.token }}"
+          target_url: http://my-app-url.com
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
