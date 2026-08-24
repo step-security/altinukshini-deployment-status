@@ -25,12 +25,12 @@
     "axios": "^1.19.0"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.13",
+    "@types/jest": "^29.5.0",
     "@types/node": "^26.2.0",
     "@vercel/ncc": "^0.44.1",
-    "jest": "^24.8.0",
-    "jest-circus": "^24.7.1",
-    "ts-jest": "^24.0.2",
+    "jest": "^30.4.2",
+    "jest-circus": "^30.4.2",
+    "ts-jest": "^29.4.12",
     "typescript": "^5.9.3"
   }
 }
